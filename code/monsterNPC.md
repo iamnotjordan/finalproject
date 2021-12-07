@@ -14,7 +14,7 @@ function FindPlayer(Position)
 	local Humanoid = nil
 	local Player = nil
 
-	for i = 1, #List do
+for i = 1, #List do
 		Player = List[i]
 		if (Player.ClassName == "Model") and (Player ~= script.Parent) then
 			HumanoidRootPart = Player:FindFirstChild("HumanoidRootPart")
