@@ -1,0 +1,11 @@
+local Animate = script.Animation
+local Human = script.Parent.Humanoid
+local Clip = Human:LoadAnimation(Animate)
+
+repeat wait() until game.Workspace.Triggers.JumpscareTriggers:FindFirstChild("JumpscareTrigger1") == nil
+
+Clip.Looped = false
+Clip:Play()
+script.Sound:Play()
+
+# this code activates when the JumpscareTrigger script is activated. This tells the Humanoid that was created to animate itself / pop out of the corner to scare the player
