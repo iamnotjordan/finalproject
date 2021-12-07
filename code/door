@@ -1,0 +1,34 @@
+local tweenService = game:GetService("TweenService")
+
+local door = script.Parent.Door
+local hinge = script.Parent.Hinge
+local prompt = door.ProximityPrompt
+
+local Open = {}
+Open.CFrame = hinge.CFrame * CFrame.Angles(0, math.rad(90), 0)
+
+local Close = {}
+Close.CFrame = hinge.CFrame * CFrame.Angles(0, 0 ,0)
+
+local tweenInfo = TweenInfo.new(1)
+local tweenOpen = tweenService:Create(hinge, tweenInfo, Open)
+local tweenClose = tweenService:Create(hinge, tweenInfo, Close)
+
+local sound = script.Parent.DoorSound
+
+prompt.Triggered:Connect(function()
+	sound:Play()
+	if prompt.ActionText == "Close" then
+		tweenClose:Play()
+		prompt.ActionText = "Open"
+	else
+		tweenOpen:Play()
+		prompt.ActionText = "Close"
+	end
+end)
+
+# Inorder for the door to work you had to use a welding tool which I connected the main door and the hinge in order to create that door animation.
+
+References:
+# https://developer.roblox.com/en-us/api-reference/class/TweenService
+# https://devforum.roblox.com/t/make-a-door-pivot-about-a-point-using-tweenservice/122774/12
