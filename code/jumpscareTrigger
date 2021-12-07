@@ -1,0 +1,10 @@
+script.Parent.Touched:Connect(function(hit)
+	if hit and hit.Parent:FindFirstChild("Humanoid") then
+		script.Parent:Destroy()
+		game.ReplicatedStorage.Jumpscare1.Parent = game.Workspace
+		wait(1)
+		game.Workspace.Jumpscare1.Parent = game.ReplicatedStorage
+	end
+end)
+
+# When the player hits a certain block at a certian spot it triggers the jumpscare
