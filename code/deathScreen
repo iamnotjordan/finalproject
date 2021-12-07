@@ -1,0 +1,16 @@
+local frame = script.Parent:WaitForChild("Frame")
+local timer = frame:WaitForChild("TimerLabel")
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local human = character:WaitForChild("Humanoid")
+
+human.Died:Connect(function()
+	frame.Visible = true
+
+	for i = 5, 0, -1 do
+		timer.Text = "Respawning in " ..i
+		wait(1)
+	end
+end)
+
