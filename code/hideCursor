@@ -1,0 +1,9 @@
+local UserInputService = game:GetService("UserInputService")
+
+while true do
+	wait(0)
+	UserInputService.MouseIconEnabled = false
+end
+
+# This code was given from API Reference
+# https://developer.roblox.com/en-us/api-reference/property/UserInputService/MouseEnabled
